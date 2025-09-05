@@ -1,74 +1,121 @@
-Auto To-Do Scheduler
+# 📝 Auto To-Do Scheduler
 
-This is a simple full-stack web application that lets you enter a list of tasks and then automatically schedules them into a timeline. You can also set optional breaks or wait times between tasks.
+A simple **full-stack web app** that takes a list of tasks and automatically schedules them into a timeline with optional breaks (wait times).  
+Built with **Express.js** (backend) and **Vanilla JS + HTML/CSS** (frontend).
 
-The backend is built with Express.js, and the frontend uses plain JavaScript, HTML, and CSS.
+---
 
-Features
+## 🚀 Features
+- Input tasks with optional durations (`Task name | minutes`)
+- Default task duration = **30 minutes** (if not specified)
+- Automatic scheduling from a configurable **start time**
+- Configurable **wait time (break)** between tasks
+- Clean, responsive dark-mode UI
 
-You can input tasks with an optional duration (for example: “Task name | minutes”).
+---
 
-If no time is given, the default duration for a task is 30 minutes.
+## 📂 Project Structure
+```
+auto-todo-app/
+│
+├── backend/
+│   ├── server.js       # Express API & static file server
+│   └── scheduler.js    # Scheduling logic
+│
+├── frontend/
+│   ├── index.html      # Main UI
+│   ├── app.js          # Frontend logic (fetch API)
+│   └── styles.css      # Styling (dark theme)
+│
+├── package.json
+└── README.md
+```
 
-The app automatically schedules tasks starting from a configurable start time.
+---
 
-You can set a wait time (or break) between tasks.
+## ⚡ Installation & Setup
 
-The interface is clean, responsive, and designed in dark mode.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/auto-todo-app.git
+   cd auto-todo-app
+   ```
 
-Project Structure
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-The project is organized into two main parts: backend and frontend.
+3. **Run the backend server**
+   ```bash
+   node backend/server.js
+   ```
+   Server will start at [http://localhost:3000](http://localhost:3000)
 
-The backend contains the server file that runs the Express API and serves static files, as well as the scheduling logic.
+4. **Open the app**  
+   Visit [http://localhost:3000](http://localhost:3000) in your browser.  
+   Enter tasks into the form, one per line.  
 
-The frontend contains the main HTML page, the JavaScript that interacts with the backend API, and the CSS for styling the dark theme.
+---
 
-There is also a package.json file for dependencies and a README file for documentation.
+## 🖊️ Usage Example
 
-Installation and Setup
+**Input in the textarea**
+```
+Task A | 45
+Task B | 30
+Task C
+```
 
-First, clone the repository and go into the project folder.
+**Output schedule**
+```
+Task A: 08:00 - 08:45
+Task B: 08:50 - 09:20
+Task C: 09:25 - 09:55
+```
+*(includes 5-minute break between tasks)*
 
-Install the necessary dependencies.
+---
 
-Run the backend server. The server will start at “http://localhost:3000”
-.
+## 🎨 Screenshots
+- Input Form  
+- Scheduled Tasks Result  
 
-Open the app in your browser at the same address.
+*(replace these placeholders with real screenshots from your running app for GitHub)*
 
-Once the app is running, you can type tasks into the form, one per line.
+---
 
-Example Usage
+## ⚙️ Configuration
 
-If you enter the following tasks:
+- **Default start time:** 08:00  
+- **Default task duration:** 30 minutes  
+- **Default wait time:** 5 minutes  
 
-Task A with a duration of 45 minutes
+You can change these defaults in `backend/scheduler.js`.  
 
-Task B with a duration of 30 minutes
+Example:
+```js
+autoScheduleTasks(tasks, "09:00", 10); // Start at 9 AM, 10 min break between tasks
+```
 
-Task C with no duration (default 30 minutes)
+---
 
-The scheduler will generate:
+## 📜 License
+This project is licensed under the **ISC License**.  
+Feel free to modify and use it for your own purposes.
 
-Task A from 8:00 to 8:45
+---
 
-Task B from 8:50 to 9:20
+## 🔄 How It Works (Workflow)
 
-Task C from 9:25 to 9:55
+```mermaid
+flowchart TD
+    A[User enters tasks] --> B[Frontend: app.js sends data]
+    B --> C[Backend: server.js receives request]
+    C --> D[scheduler.js calculates timeline]
+    D --> E[Server returns scheduled tasks]
+    E --> F[Frontend displays timeline in UI]
+```
 
-It automatically includes a 5-minute break between tasks.
-
-Configuration
-
-The default start time is 8:00 AM.
-
-The default task duration is 30 minutes.
-
-The default break between tasks is 5 minutes.
-
-You can change these settings in the scheduler file. For example, you can start tasks at 9:00 AM with a 10-minute break between them.
-
-License
-
-The project uses the ISC License. You are free to modify and use it for your own purposes.
+---
+✨ This README is **complete and ready for GitHub**.
