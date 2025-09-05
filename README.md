@@ -1,109 +1,74 @@
-# 📝 Auto To-Do Scheduler
+Auto To-Do Scheduler
 
-A simple **full-stack web app** that takes a list of tasks and automatically schedules them into a timeline with optional breaks (wait times).  
-Built with **Express.js** (backend) and **Vanilla JS + HTML/CSS** (frontend).
+This is a simple full-stack web application that lets you enter a list of tasks and then automatically schedules them into a timeline. You can also set optional breaks or wait times between tasks.
 
----
+The backend is built with Express.js, and the frontend uses plain JavaScript, HTML, and CSS.
 
-## 🚀 Features
-- Input tasks with optional durations (`Task name | minutes`)
-- Default task duration = **30 minutes** (if not specified)
-- Automatic scheduling from a configurable **start time**
-- Configurable **wait time (break)** between tasks
-- Clean, responsive dark-mode UI
+Features
 
----
+You can input tasks with an optional duration (for example: “Task name | minutes”).
 
-## 📂 Project Structure
-auto-todo-app/
-│
-├── backend/
-│ ├── server.js # Express API & static file server
-│ └── scheduler.js # Scheduling logic
-│
-├── frontend/
-│ ├── index.html # Main UI
-│ ├── app.js # Frontend logic (fetch API)
-│ └── styles.css # Styling (dark theme)
-│
-├── package.json
-└── README.md
+If no time is given, the default duration for a task is 30 minutes.
 
+The app automatically schedules tasks starting from a configurable start time.
 
----
+You can set a wait time (or break) between tasks.
 
-## ⚡ Installation & Setup
+The interface is clean, responsive, and designed in dark mode.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/auto-todo-app.git
-   cd auto-todo-app
+Project Structure
 
-   
-2. Install dependencies
+The project is organized into two main parts: backend and frontend.
 
-npm install
+The backend contains the server file that runs the Express API and serves static files, as well as the scheduling logic.
 
+The frontend contains the main HTML page, the JavaScript that interacts with the backend API, and the CSS for styling the dark theme.
 
-3. Run the backend server
+There is also a package.json file for dependencies and a README file for documentation.
 
-node backend/server.js
+Installation and Setup
 
+First, clone the repository and go into the project folder.
 
-Server will start at http://localhost:3000
-4. Open the app
+Install the necessary dependencies.
 
-Visit http://localhost:3000 in your browser.
+Run the backend server. The server will start at “http://localhost:3000”
+.
 
-Enter tasks into the form, one per line. 
+Open the app in your browser at the same address.
 
-🖊️ Usage Example
-Input in the textarea
+Once the app is running, you can type tasks into the form, one per line.
 
-Task A | 45
-Task B | 30
-Task C
+Example Usage
 
-Output schedule
+If you enter the following tasks:
 
-Task A: 08:00 - 08:45
-Task B: 08:50 - 09:20
-Task C: 09:25 - 09:55
-(includes 5-minute break between tasks)
+Task A with a duration of 45 minutes
 
-🎨 Screenshots
-Input Form
+Task B with a duration of 30 minutes
 
-Scheduled Tasks Result
+Task C with no duration (default 30 minutes)
 
-(replace these placeholders with real screenshots from your running app for GitHub)
+The scheduler will generate:
 
-⚙️ Configuration
+Task A from 8:00 to 8:45
 
-Default start time: 08:00
+Task B from 8:50 to 9:20
 
-Default task duration: 30 minutes
+Task C from 9:25 to 9:55
 
-Default wait time: 5 minutes
+It automatically includes a 5-minute break between tasks.
 
-You can change these defaults in backend/scheduler.js.
-Example:
+Configuration
 
-autoScheduleTasks(tasks, "09:00", 10); // Start at 9 AM, 10 min break between tasks
+The default start time is 8:00 AM.
 
+The default task duration is 30 minutes.
 
-📜 License
+The default break between tasks is 5 minutes.
 
-This project is licensed under the ISC License.
-Feel free to modify and use it for your own purposes.
+You can change these settings in the scheduler file. For example, you can start tasks at 9:00 AM with a 10-minute break between them.
 
----
+License
 
-✨ This README is **complete and combined** — ready for GitHub.  
-
-Do you want me to also **add a “How it Works” diagram** (simple workflow chart) inside the README so it’s even clearer?
-
-
-
-
-
+The project uses the ISC License. You are free to modify and use it for your own purposes.
