@@ -1,3 +1,4 @@
+
 # 📝 Auto To-Do Scheduler
 
 A simple **full-stack web app** that takes a list of tasks and automatically schedules them into a timeline with optional breaks (wait times).  
@@ -118,3 +119,29 @@ flowchart TD
 ```
 
 ---
+
+### 📌 Example Input JSON
+```json
+{
+  "tasks": [
+    { "name": "Write report", "duration": 60 },
+    { "name": "Check emails", "duration": 20 },
+    { "name": "Team meeting", "duration": 45 },
+    { "name": "Code review", "duration": 30 },
+    { "name": "Lunch break", "duration": 60 }
+  ]
+}
+```
+
+### 📌 Example Output JSON
+```json
+{
+    "scheduled": [
+        { "start": "08:00 AM", "end": "09:00 AM" },
+        { "start": "09:00 AM", "end": "09:20 AM" },
+        { "start": "09:20 AM", "end": "10:05 AM" },
+        { "start": "10:05 AM", "end": "10:35 AM" },
+        { "start": "10:35 AM", "end": "11:35 AM" }
+    ]
+}
+```
