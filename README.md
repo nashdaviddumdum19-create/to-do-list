@@ -1,4 +1,4 @@
-
+ 
 # 📝 Auto To-Do Scheduler
 
 A simple **full-stack web app** that takes a list of tasks and automatically schedules them into a timeline with optional breaks (wait times).  
